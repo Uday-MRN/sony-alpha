@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONY ALPHA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #001a43;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 32px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .media-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .media-container video,
+        .media-container img {
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .media-container img,
+        .media-container video {
+            opacity: 0;
+        }
+
+        .media-container img.visible,
+        .media-container video.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        THINK WEDDINGS, THINK SONY
+    </header>
+
+    <div class="content">
+        <h1>Witness the Magic of a Dream Wedding with Sony Alpha</h1>
+        <div class="media-container">
+            <img id="mainImage" src="/img/camera.webp" alt="sony alpha" class="visible">
+            <a id="introVideoLink" href="https://alphacommunity.in/" target="_blank">
+                <video style="position: absolute; top: 0; left: 0;" id="introVideo" muted>
+                    <source src="/img/full.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+            <img id="gifBanner" style="position: absolute; bottom: 0; left: 0;" src="/img/banner.gif" alt="Special Offer" class="banner">
+
+        </div>
+        <div>
+            <p>
+                The Sony Alpha series is perfect for capturing stunning wedding moments with its top-notch image quality, fast autofocus, and exceptional low-light performance. Whether you're shooting intricate details or candid emotions, Sony Alpha cameras ensure every shot is crisp and beautiful. When it comes to weddings, Think Wedding, Think Sony for unparalleled results.
+            </p>
+            <p>
+                With advanced features like eye-tracking autofocus, high-resolution sensors, and seamless 4K video recording, the Sony Alpha cameras deliver professional-grade performance for wedding photographers. They capture every precious moment with vivid clarity and natural colors, ensuring your wedding memories are as magical as the day itself. For the perfect wedding shots, Think wedding, Think Sony.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Select the video and image elements
+        const video = document.getElementById('introVideo');
+        const image = document.getElementById('mainImage');
+        const banner = document.getElementById('gifBanner');
+
+        // Initially show the image
+        setTimeout(() => {
+            // Hide the image and show the video
+            image.classList.remove('visible');
+            video.classList.add('visible');
+            video.play(); // Play the video
+        }, 2000); // Wait for 2 seconds
+
+        // When the video ends, show the image again
+        video.addEventListener('ended', () => {
+            video.classList.remove('visible'); // Hide the video
+            image.classList.add('visible'); // Show the image
+
+            // Show the banner after a short delay
+            setTimeout(() => {
+                banner.classList.add('visible');
+            }, 500); // Delay for 0.5 seconds
+        });
+    </script>
+</body>
+
+</html>
